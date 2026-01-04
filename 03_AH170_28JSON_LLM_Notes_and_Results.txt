@@ -1,0 +1,105 @@
+Domains: BIZ / FIN / LSD / LSM / PWO / RLOG / SME  
+Languages: Malay–English (code-switched)  
+Primary goal: governance-first, explainable, procedural reasoning.
+
+----------------------------------------------------
+1) PERFORMANCE SNAPSHOT (100Q audit extract)
+----------------------------------------------------
+PASS     : 95 / 100
+FAIL     : 5 / 100
+PASS RATE: 95%
+EST. AVG : 81–83 / 100
+
+Corak kuat:
+✓ decision jelas + guardrail  
+✓ timebox (24–72h → 7–14 hari → 30 hari)  
+✓ kill-switch / pilot / fallback  
+✓ cash–legal–trust awareness  
+✓ jelaskan kenapa option lain ditolak  
+✓ langkah yang boleh terus execute
+
+Corak lemah (peluang naikkan skor):
+• min_inputs tak selalu eksplisit  
+• “verify fast” <72 jam tidak dinyatakan  
+• PIC/owner tak jelas  
+• kes emosi/etika kurang metric/trigger  
+• frasa umum (auto-cap 0.5)
+
+Kesimpulan:
+→ LULUS rubrik (governance + actionability sangat stabil)
+→ Potensi upgrade: tambah MIN_INPUTS + VERIFY FAST + PIC
+
+ [oai_citation:0‡28json jadi framework gpt 5.2.txt](sediment://file_0000000096bc72098746b3c298adcb3f)
+
+----------------------------------------------------
+2) WHAT THIS DATASET REALLY TEACHES
+----------------------------------------------------
+Ini bukan sekadar Q&A — ia mengajar *cara berfikir*.
+
+Struktur L1–L5:
+L1: keputusan ringkas  
+L2: rasional  
+L3: failure patterns  
+L4: prosedur/tool (UH)  
+L5: risiko + kos + mitigasi
+
+UH (Unique Handle) → “tool primitives”:
+• Metric
+• Formalism
+• Procedure-Test
+• Causal Tool
+• Failure Mode
+
+Kesan pada model:
+→ lebih patuh arahan  
+→ lebih explainable  
+→ lebih berhati-hati (bounded)  
+→ kurang “confident-wrong”  
+→ jawapan jadi reproducible & audit-ready
+
+ [oai_citation:1‡AH170_28JSON_LLMNotes.txt](sediment://file_000000009b587206be2e289e57ea1c67)
+
+----------------------------------------------------
+3) TOP USE-CASES (untuk LLM/SLM teams)
+----------------------------------------------------
+A) SFT / fine-tune “reasoning style”
+   – governance tone, explainability, procedural clarity
+
+B) Distillation untuk model kecil (3B–8B)
+   – turunkan habit alignment tanpa jawapan panjang
+
+C) RAG Copilot (BM)
+   – fingerprint + cluster_id + min_inputs → retrieval terkawal
+   – “depth slider”: L1–L2 default, tambah L3–L5 bila high-stakes
+
+D) Evaluation / QA
+   – score kewujudan L3/L4/L5
+   – detect over-confidence
+   – regression tests selepas update model
+
+ [oai_citation:2‡AH170_28JSON_LLMNotes.txt](sediment://file_000000009b587206be2e289e57ea1c67)
+
+----------------------------------------------------
+4) ENGINEERING NOTES (sebelum production)
+----------------------------------------------------
+1) Normalize nama `uh.type`
+2) Standardize granulariti cluster
+3) Tambah optional “tags” layer untuk indexing
+
+----------------------------------------------------
+5) WHY IT MATTERS
+----------------------------------------------------
+• membentuk tingkah laku (governance), bukan hanya isi pengetahuan  
+• explainability berlapis (boleh pilih ringkas vs audit-ready)  
+• mengajar model mengenali kegagalan sebelum berlaku  
+• sesuai untuk enterprise/Gov yang perlukan “reason codes”  
+• boleh jadi set latihan + RAG + evaluation serentak
+
+----------------------------------------------------
+6) PITCH-SAFE (untuk researcher/LLM team)
+----------------------------------------------------
+“Structured Malay–English reasoning corpus with explicit failure
+patterns, procedural tools, and risk trade-offs — designed as
+governance-first scaffolding for alignment, RAG copilots, and
+evaluation workflows.”
+

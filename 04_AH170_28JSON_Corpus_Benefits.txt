@@ -1,0 +1,106 @@
+# AH170 — 28 JSON Corpus Benefits (v1.0)
+
+**Tarikh:** 30 Disember 2025 (MY)  
+**Sumber analisis:** GPT-5.2 Thinking Mode  
+**Skop:** 28 fail JSON (±1,400 item) dari 7 domain: BIZ / FIN / LSD / LSM / PWO / RLOG / SME  
+**Tujuan dokumen:** Merumuskan manfaat yang LLM/SLM boleh dapat daripada corpus ini (tanpa masuk detail implementasi RAG/FT).
+
+---
+
+## 1) Ringkasan nilai (apa yang corpus ini ajar pada model)
+Corpus ini melatih model supaya bukan sekadar “memberi jawapan”, tetapi **mengikut disiplin berfikir manusia matang** melalui struktur tetap:
+- **L1:** arahan/jawapan ringkas (executive answer)
+- **L2:** rasional/konsep
+- **L3:** *failure pattern* (kesilapan lazim)
+- **L4:** UH (alat/prosedur) — langkah, formula, checklist
+- **L5:** kos/risiko/trade-off + mitigasi/batas
+
+Setiap item juga mempunyai **UH primitives** (`uh.type/name/artifact`) dan metadata (`fingerprint`, `cluster_id`, `min_inputs`) yang membantu kebolehan model untuk routing, gating, dan konsistensi respons.
+
+---
+
+## 2) Benefits utama (yang paling “load-bearing”)
+1. **Reasoning discipline (L1–L5)**
+   - Model belajar struktur jawapan yang stabil dan boleh diramal.
+2. **Explainability yang boleh diaudit**
+   - Model terbiasa menerangkan “kenapa” dan “macam mana”, bukan sekadar “apa”.
+3. **Self-critique & error prevention**
+   - L3 melatih model nampak kesilapan lazim sebelum ia berlaku.
+4. **Risk calibration & trade-off thinking**
+   - L5 memaksa model sebut kos/risiko/side-effect + mitigasi.
+5. **Procedural reliability (actionable output)**
+   - L4 (UH) melatih model memberi langkah yang boleh diikuti, bukan teori kosong.
+6. **Governance-first behavior**
+   - Nada output cenderung berhati-hati, bounded, dan sesuai untuk high-stakes.
+7. **Cross-domain coherence**
+   - Gaya reasoning yang sama merentas 7 domain → generalize lebih baik.
+
+---
+
+## 3) Senarai penuh manfaat (40+ poin)
+
+### A) Benefits untuk TRAINING / STYLE ALIGNMENT
+1. Layered reasoning habit (L1→L5)
+2. Instruction-following lebih stabil (format konsisten)
+3. Self-critique implicit (L3 + L5)
+4. Anti-overconfidence conditioning (boundedness)
+5. Risk calibration (trade-off + mitigation)
+6. Failure anticipation (fail pattern awareness)
+7. Prosedur yang jelas (steps/checklist/formula)
+8. Metric thinking (UH: Metric)
+9. Formalization skill (UH: Formalism)
+10. Causal reasoning (UH: Causal Tool)
+11. Failure-mode reasoning (UH: Failure Mode)
+12. Governance tone yang konsisten (lebih cautious daripada “random advice”)
+13. Better “stop conditions” (bila perlu berhenti / fallback)
+14. Better uncertainty posture (kurang confident wrong)
+15. Controllable verbosity (jawab ringkas vs dalam)
+16. Strong “reason-first” behavior (bukan impulse output)
+17. Reduced hallucination style melalui habit limitasi/risiko
+18. Lebih mudah bina “policy-like responses” tanpa RLHF berat
+
+### B) Benefits untuk SLM (model kecil)
+19. Distillation-ready scaffolding (bukan jawapan kosong)
+20. Transfer “thinking template” tanpa tambah parameter
+21. Menutup kelemahan SLM pada trade-off & prosedur
+22. Tingkatkan reliability output pada use-case enterprise/copilot
+23. Kurangkan mode “ramble” (struktur memegang output)
+24. Tingkatkan generalization sebab cross-domain coherence
+
+### C) Benefits untuk Retrieval / Routing (metadata-driven)
+25. `fingerprint` sebagai anchor ringkas (sesuai untuk search/retrieval)
+26. `cluster_id` bantu domain/cluster routing
+27. `min_inputs` bantu gating (cukup info atau perlu tanya)
+28. UH name/type boleh jadi tag routing (“nak langkah” → Procedure-Test)
+29. Mudah buat “depth selection” (L1–L2 vs L1–L5)
+30. Mudah bina response standard untuk copilot (templateable)
+
+### D) Benefits untuk Evaluation / QA / Safety
+31. Schema konsisten → mudah validate & lint
+32. Expected structure → mudah score automatik (completeness)
+33. Explainability coverage test (ada L3/L4/L5 atau tidak)
+34. Safety regression test (model makin reckless atau tidak)
+35. Overconfidence detection (model sebut risiko/limitasi?)
+36. Duplicate/overlap audit lebih mudah (fingerprint/UH sebagai anchor)
+37. Coverage analysis (domain/cluster heatmap)
+38. Sesuai untuk audit log / reason codes dalam deployment
+
+### E) Benefits produk & diferensiasi
+39. Malaysia-first reasoning identity (bukan sekadar terjemah)
+40. Sesuai untuk Gov/SME/Bank kerana governance tone
+41. UH sebagai “tool library” yang boleh dipakejkan
+42. Modular packaging: 7 domain packs boleh diekstrak ikut produk
+43. Data curated & berstruktur → sukar ditiru melalui scraping semata-mata (IP lebih defensible)
+44. Boleh jadi “human training manual” (byproduct) kerana struktur berlapis
+
+---
+
+## 4) Nota ringkas (penambahbaikan kecil, optional)
+- Normalisasi kecil pada `uh.type` (contoh variasi dash/spasi) boleh menguatkan konsistensi metadata untuk pipeline.
+- Standardize granularity `cluster_id` (optional) jika mahu router/eval lebih seragam.
+
+---
+
+## 5) Penutup
+Manfaat corpus ini datang daripada **konsistensi disiplin reasoning** (L1–L5) + **tool primitives (UH)** + **failure/risk calibration**,
+yang menjadikannya aset bernilai untuk membentuk tingkah laku model (LLM/SLM) supaya lebih explainable, berhati-hati, dan actionable — khususnya dalam konteks Bahasa Malaysia.

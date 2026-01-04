@@ -1,0 +1,130 @@
+# AH170 — 28 JSON Value Notes (v1.0)
+
+**Tarikh:** 30 Disember 2025 (MY)  
+**Sumber analisis:** GPT-5.2 Thinking Mode  
+**Skop:** 28 fail JSON (±1,400 item), 7 domain: BIZ / FIN / LSD / LSM / PWO / RLOG / SME  
+**Tujuan dokumen:** Merumuskan nilai teknikal & manfaat dataset berdasarkan pemerhatian struktur dan corak kandungan dalam 28 fail.
+
+---
+
+## 1) Apa yang dataset ini “sebenarnya” (bukan sekadar Q&A)
+
+Dataset ini ialah **corpus reasoning berstruktur** yang memaksa AI mengikut disiplin:
+- **L1:** arahan/jawapan ringkas (executive decision)
+- **L2:** rasional/konsep
+- **L3:** *failure pattern* (silap lazim manusia)
+- **L4:** prosedur/alat (UH) — langkah, checklist, formula, rule
+- **L5:** kos/risiko/trade-off + mitigasi/batas
+
+Setiap item juga mengandungi:
+- `uh{type,name,artifact}` = primitif “alat” yang boleh dipanggil semula (tooling mental)
+- `fingerprint` = ringkasan retrieval (padat)
+- `cluster_id` = routing domain/cluster
+- `min_inputs` = gating input (cukup info atau perlu tanya)
+
+---
+
+## 2) Nilai teras untuk LLM/SLM (ringkasan 40+ manfaat)
+
+### A) Manfaat untuk TRAINING / FINE-TUNE (LLM & SLM)
+1. **Layered reasoning habit** (L1→L5)  
+2. **Instruction-following yang stabil** (format konsisten)  
+3. **Self-critique implicit** (L3 failure + L5 risk)  
+4. **Risk calibration training** (trade-off, mitigasi, side-effect)  
+5. **Anti-overconfidence conditioning** (wajib sebut batas/kos)  
+6. **Procedural competence** (L4 = langkah/checklist/formula)  
+7. **Metric thinking** (UH type “Metric” → kuantifikasi)  
+8. **Formalization skill** (UH “Formalism” → definisi/kerangka)  
+9. **Causal reasoning** (UH “Causal Tool” → sebab-akibat)  
+10. **Failure-mode reasoning** (UH “Failure Mode” → anticipasi kegagalan)  
+11. **Consistency across domains** → generalization style (transfer)  
+12. **Curriculum learning built-in** (domain pack modular)  
+13. **SLM distillation-ready** (scaffolding kuat, bukan jawapan kosong)  
+14. **Better “decision support” behavior** (bukan creative chat)  
+15. **Reduced verbosity control** (model belajar answer ringkas vs dalam)  
+16. **Better “step gating”** (jangan terus buat—tapis dulu)  
+17. **Better “stop conditions”** (bila patut berhenti / fallback)  
+18. **Lower hallucination tendency** secara style (lebih cautious & bounded)
+
+### B) Manfaat untuk RAG / RETRIEVAL (production)
+19. **RAG-friendly indexing** (fingerprint + UH name + domain + cluster)  
+20. **High precision retrieval** sebab fingerprint padat & unik  
+21. **Routing by `min_inputs`** (kalau input tak cukup → tanya)  
+22. **Multi-stage retrieval** (domain → cluster → item)  
+23. **Answer synthesis template** (L1–L5 jadi kerangka response generator)  
+24. **“Depth slider” output**: RAG boleh keluarkan L1 sahaja, atau full L1–L5  
+25. **Low compute serving**: SLM + RAG masih nampak “smart” sebab structure bantu  
+26. **Safer enterprise RAG**: L5 paksa mention risiko/limitasi → kurang liability  
+27. **Easier caching**: L1 ringkas boleh cache sebagai “quick answers”  
+
+### C) Manfaat untuk EVALUATION / QA / SAFETY
+28. **Evaluation harness**: expected structure memudahkan scoring automatik  
+29. **Explainability scoring**: cek kewujudan L3/L4/L5 (coverage)  
+30. **Safety regression tests**: track sama ada model makin reckless/lembut  
+31. **Compliance readiness**: style ada risk+mitigation (enterprise friendly)  
+32. **Data quality linting**: schema konsisten → mudah validate pipeline  
+33. **Duplicate detection**: fingerprint + UH name jadi anchor untuk overlap check  
+34. **Coverage analysis**: domain/cluster mapping boleh buat heatmap coverage  
+35. **Prompt robustness**: walau prompt pendek, model biasa “lengkapkan” risk/failure  
+
+### D) Manfaat “produk” (market fit & differentiation)
+36. **Malaysia-first reasoning identity** (bukan sekadar BM translation)  
+37. **Governance tone**: sesuai gov/SME/bank (bukan vibe sosial media)  
+38. **Reusable “tool library”** (UH sebagai katalog alat)  
+39. **Modular licensing**: 7 domain packs boleh dijual/lesen berasingan  
+40. **Fast domain expansion pattern**: framework membolehkan tambah domain baru konsisten  
+41. **Hard-to-scrape IP**: bukan teks raw; struktur + tool primitives sukar ditiru  
+42. **Human training byproduct**: boleh jadi manual/curriculum untuk manusia juga  
+
+---
+
+## 3) Kenapa ini bernilai tinggi untuk SLM (model kecil)
+SLM biasanya lemah pada:
+- trade-off
+- failure anticipation
+- prosedur tersusun
+- calibration risiko
+
+Dataset ini kuat pada L3/L4/L5 → menjadikan ia **distillation-ready**:
+- boleh “transfer” gaya berfikir tanpa menaikkan parameter
+- boleh bantu SLM tampak lebih matang melalui scaffolding
+
+---
+
+## 4) Kenapa ini bernilai tinggi untuk RAG
+Field `fingerprint + uh + cluster_id + min_inputs` membolehkan:
+- retrieval tepat (fingerprint)
+- routing (domain/cluster)
+- gating (min_inputs)
+- synthesis output berlapis (L1–L5)
+
+Dataset ini bukan hanya “knowledge”, tapi **response blueprint** untuk sistem copilot.
+
+---
+
+## 5) Nota engineering (penambahbaikan kecil untuk production)
+1) **Normalize `uh.type`**
+- satukan variasi seperti `Causal Tool` vs `Causal-Tool`
+- satukan `Failure Mode` vs `Failure-Mode`
+
+2) **Standardize cluster granularity (optional)**
+- sesetengah domain guna `-01/-02/...` subcluster, sesetengah domain hanya `C1..C5`
+- tak salah, tapi untuk router/eval pipeline mungkin elok disejajarkan
+
+---
+
+## 6) Frasa neutral yang selamat untuk digunakan dalam pitch
+- “Structured Bahasa Malaysia reasoning corpus (L1–L5) with failure patterns and risk trade-offs.”
+- “Governance-first decision logic suitable for SLM alignment, RAG copilots, and evaluation.”
+- “Curated, structured reasoning tools (UH) designed for explainability and safer outputs.”
+
+---
+
+## 7) Penutup
+Value dataset ini datang daripada **konsistensi struktur reasoning**, bukan semata-mata bilangan item.
+Ia menggabungkan:
+- explainability (L1–L5),
+- tool primitives (UH),
+- failure anticipation (L3),
+- risk calibration (L5),
+yang menjadikannya relevan untuk **fine-tune SLM/LLM**, **RAG production**, dan **evaluation/safety QA**.

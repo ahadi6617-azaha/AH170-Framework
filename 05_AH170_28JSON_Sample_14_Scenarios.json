@@ -1,0 +1,255 @@
+[
+  {
+    "id": "FIN-Q0001",
+    "domain": "FIN",
+    "uh": {
+      "type": "Procedure-Test",
+      "name": "30D Cashfloor Lock",
+      "artifact": "lock minimum cash 30 hari + urutan bayar hutang mengikut impak"
+    },
+    "fingerprint": "Income jatuh 30% tapi hutang tetap jalan, nak pilih hutang mana dulu",
+    "min_inputs": 3,
+    "answer": {
+      "L1": "Kunci dulu cashfloor 30 hari, lepas itu bayar hutang ikut: elak default operasi → elak legal → baru elak malu sosial.",
+      "L2": "Bila income jatuh, tujuan utama ialah elak bisnes atau hidup harian runtuh dulu. Bukan semua hutang ada impak sama: ada yang matikan operasi, ada yang hanya memalukan, ada yang hanya lambatkan saving.",
+      "L3": "Failure pattern: bayar ikut emosi (takut malu, takut mak marah) atau ikut interest paling tinggi tanpa kira gaji/operasi, sampai cash habis dan basic expense bocor.",
+      "L4": "30D Cashfloor Lock: 1) kira kos hidup minimum 30 hari (makan, sewa, petrol, komit fix), 2) lock amount itu dan anggap tak wujud, 3) dari baki, susun hutang: A) yang boleh hentikan kerja/rumah jika tak bayar, B) yang boleh bawa tindakan undang-undang, C) yang hanya memberi tekanan sosial, 4) bayar dalam urutan A → B → C.",
+      "L5": "Cost: nampak macam ‘derhaka’ bila bayar hutang sosial lambat sedikit; risk: hubungan tegang sementara. Benefit: tak jadi collapse ekonomi sendiri dan boleh terus bayar konsisten. Mitigasi: komunikasi jujur dengan pihak C, beritahu plan jelas."
+    }
+  },
+  {
+    "id": "FIN-Q0002",
+    "domain": "FIN",
+    "uh": {
+      "type": "Metric",
+      "name": "Cash Conversion Loop (CCL)",
+      "artifact": "ukur berapa hari duit keluar sebagai kos kembali jadi duit masuk"
+    },
+    "fingerprint": "Belanja marketing dan stok tapi tak tahu bila cash akan berpusing balik",
+    "min_inputs": 3,
+    "answer": {
+      "L1": "Hanya naikkan belanja bila Cash Conversion Loop jelas ≤ X hari yang kau mampu tanggung.",
+      "L2": "Masalah ramai founder: tambah belanja sebab ‘nampak growth’ tapi tak kira berapa lama duit terperangkap sebelum kembali jadi cash. Bila loop terlalu panjang, bisnes nampak berkembang tetapi bank akaun nazak.",
+      "L3": "Failure pattern: ikut ROAS/ROI atas kertas tanpa kira timing cash; nampak untung 40% tapi cash tersekat 120 hari, sedangkan komitmen bulanan tak tunggu.",
+      "L4": "CCL: 1) catat tarikh duit keluar (iklan, stok, gaji), 2) catat tarikh cash dari cycle itu masuk (sale clear + collection), 3) kira hari di antara. Bandingkan CCL dengan run-rate cash; kalau CCL > horizon selamat (contoh 45 hari), jangan scale belanja, tweak model dulu.",
+      "L5": "Cost: growth nampak perlahan sebab kau tak hentam gas maksimum. Benefit: elak ‘mati cash’ walaupun P&L cantik. Risk: terlalu konservatif bila CCL sebenarnya boleh dipendekkan; mitigasi: test kecil-kecilan untuk turunkan CCL sambil monitor."
+    }
+  },
+  {
+    "id": "BIZ-Q0001",
+    "domain": "BIZ",
+    "uh": {
+      "type": "Formalism",
+      "name": "Core vs Decoration Split",
+      "artifact": "asingkan fungsi wajib jalan vs nice-to-have sebelum potong kos"
+    },
+    "fingerprint": "Nak buang kos tapi takut bisnes rosak brand dan operasi",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Pisahkan dulu kos kepada core dan decoration, potong decoration habis sebelum sentuh core.",
+      "L2": "Masa krisis, ramai founder potong benda yang salah: training, CS, QA – sebab nampak besar. Padahal benda itulah yang jaga reputasi dan repeat. Hiasan (deco, langsir, subscription tak critical) patut pergi dulu.",
+      "L3": "Failure pattern: potong staf yang jaga mutu, tapi kekalkan benda kosmetik sebab ‘nampak cantik di mata pelanggan’, lalu dalam diam kualiti runtuh dan churn naik.",
+      "L4": "Core vs Decoration Split: 1) senaraikan semua kos, 2) tag setiap item sama ada ‘jika buang, operasi tak boleh jalan / kualiti rosak’ (core) atau ‘buang, kualiti kekal 80–90%’ (decoration), 3) buang decoration dulu, 4) hanya sentuh core jika ada plan gantian jelas.",
+      "L5": "Cost: rasa ego dan pride tercedera bila nampak ‘downgrade’, contohnya ofis kurang fancy. Benefit: runway hidup lebih lama tanpa rosak core value. Risk: tersalah label core vs decoration; mitigasi: tanya pelanggan heavy user apa yang mereka betul-betul peduli."
+    }
+  },
+  {
+    "id": "BIZ-Q0002",
+    "domain": "BIZ",
+    "uh": {
+      "type": "Procedure-Test",
+      "name": "7D Toxic Impact Audit",
+      "artifact": "audit impact staf toksik dalam 7 hari sebelum buat keputusan"
+    },
+    "fingerprint": "Top sales bawa banyak revenue tapi perangai rosak team dan pelanggan",
+    "min_inputs": 3,
+    "answer": {
+      "L1": "Audit dulu impact toksik 7 hari, lepas itu decide sama ada perlu reframe KPI, pindahkan peranan, atau keluarkan terus.",
+      "L2": "Top sales yang toksik kadang-kadang bawa duit hari ini, tapi bakar team dan reputasi esok. Keputusan tak boleh ikut angka revenue semata-mata; kena kira kos tak nampak seperti churn staff dan review buruk.",
+      "L3": "Failure pattern: owner ‘tebus dosa’ top sales sebab takut hilang angka, sampai team baik keluar dan budaya kerja jadi racun.",
+      "L4": "7D Toxic Impact Audit: selama 7 hari, 1) track complaint, churn, konflik yang berkait direct dengan individu itu, 2) kira revenue yang dia bawa, 3) estimate kos pengganti dan kos kehilangan staf lain, 4) decide: A) strict behavior contract + mentoring, B) tukar peranan yang kurang damage, atau C) exit dengan plan gantian.",
+      "L5": "Cost: short-term revenue mungkin jatuh kalau dia keluar. Benefit: budaya lebih sihat, senang tarik bakat baru dan jaga brand jangka panjang. Risk: tersilap nilai, keluarkan terlalu cepat; mitigasi: pastikan plan transfer knowledge dan pipeline sales alternative."
+    }
+  },
+  {
+    "id": "LSM-Q0001",
+    "domain": "LSM",
+    "uh": {
+      "type": "Formalism",
+      "name": "One Constraint Per Cycle",
+      "artifact": "belajar dengan hanya satu batas utama setiap kitaran 14 hari"
+    },
+    "fingerprint": "Belajar banyak topik tapi sentiasa rasa serabut dan tak konsisten",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Setkan satu constraint belajar untuk 14 hari, bukan cuba betulkan semua tabiat serentak.",
+      "L2": "Otak manusia susah adapt banyak perubahan sekaligus. Kalau cuba disiplinkan masa, fokus, nota, dan hafalan serentak, semua jatuh. Satu constraint jelas lebih mudah dilawan dan diukur.",
+      "L3": "Failure pattern: beli banyak course, buka semua, rasa gagal bila tak habis satu pun; akhirnya label diri malas padahal sistem terlalu kompleks.",
+      "L4": "One Constraint Per Cycle: 1) pilih satu kelemahan paling sakit (contoh: lompat-lompat topik), 2) lock rule 14 hari (contoh: tak boleh buka topik baru sebelum habis 3 sesi topik sama), 3) log setiap hari patuh atau tidak, 4) hanya selepas stabil, baru tambah constraint kedua.",
+      "L5": "Cost: progress nampak slow sebab tak kejar semua benda, FOMO tinggi. Benefit: compound growth, satu tabiat kukuh demi satu. Risk: pilih constraint yang salah (terlalu kecil), mitigasi: review setiap 14 hari dan adjust sasaran."
+    }
+  },
+  {
+    "id": "LSM-Q0002",
+    "domain": "LSM",
+    "uh": {
+      "type": "Metric",
+      "name": "Transfer Test Score",
+      "artifact": "ukur berapa tinggi ilmu boleh dipindahkan ke situasi baru"
+    },
+    "fingerprint": "Baca banyak teori tapi bila real case blur tak boleh guna",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Setiap kali belajar konsep baru, wajib lalui sekurang-kurangnya satu transfer test sebelum anggap ‘sudah faham’.",
+      "L2": "Minda selalu tipu diri: bila nampak contoh yang sama, rasa ‘oh senang’, tapi bila bentuk sedikit berbeza, terus blank. Transfer test memaksa otak cabut konsep dari contoh asal dan tanam dalam situasi lain.",
+      "L3": "Failure pattern: puas hati dengan skor tinggi pada latihan yang sama format, tetapi gagal total bila format atau konteks tukar sedikit.",
+      "L4": "Transfer Test Score: selepas belajar, 1) cipta atau cari contoh baru yang tak identik dengan latihan asal, 2) cuba guna konsep sama untuk selesaikan, 3) self-rate 0–2 (0 = tak boleh, 1 = perlu rujuk, 2 = boleh sendiri), 4) hanya bila dapat 2, mark konsep itu sebagai ‘ready to deploy’.",
+      "L5": "Cost: masa tambahan untuk buat latihan pelik yang tak ‘necessary’ atas kertas. Benefit: bila jumpa situasi real, otak sudah biasa adapt, bukan hanya hafal pattern. Risk: over-engineer sampai tak bergerak; mitigasi: pilih hanya konsep kritikal untuk transfer test."
+    }
+  },
+  {
+    "id": "PWO-Q0001",
+    "domain": "PWO",
+    "uh": {
+      "type": "Procedure-Test",
+      "name": "2-Minute Ignition + Friction Map (2MIF)",
+      "artifact": "mulakan kerja 2 minit, kemudian buang satu friction terbesar"
+    },
+    "fingerprint": "Asyik tangguh kerja penting sebab rasa berat nak mula",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Jangan tunggu mood; mula 2 minit, kemudian buang satu friction paling besar sebelum sambung.",
+      "L2": "Procrastinate jarang tentang malas; ia tentang kerja yang nampak kabur, besar, atau menakutkan. Pecahkan otot mula dan otot susun semula supaya kerja jadi boleh didekati.",
+      "L3": "Failure pattern: tunggu semangat datang; bila tak datang, scroll; atau paksa diri buat 2 jam terus, penat, lepas itu benci task dan ulang pattern.",
+      "L4": "2MIF: 1) set timer 2 minit, buat apa-apa action kecil berkait kerja (buka file, tulis tajuk), 2) selepas 2 minit, tulis semua friction yang terasa (tak jelas, tak tahu step, environment bising), 3) pilih satu friction paling besar dan buang/kurangkan dulu, 4) sambung kerja 10–25 minit lagi.",
+      "L5": "Cost: nampak macam ‘buang masa’ 5–10 minit untuk fikir friction. Benefit: bila friction turun, kerja jadi recurring tanpa drama. Risk: terperangkap dalam ‘setup mode’ tanpa buat kerja; mitigasi: kunci masa maks 10 minit untuk mapping."
+    }
+  },
+  {
+    "id": "PWO-Q0002",
+    "domain": "PWO",
+    "uh": {
+      "type": "Metric",
+      "name": "Energy-Match Scheduling",
+      "artifact": "padan jenis kerja dengan slot tenaga tinggi/rendah"
+    },
+    "fingerprint": "Letak kerja berat pada waktu tenaga rendah, hasil sentiasa cincai",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Susun kerja ikut tenaga, bukan ikut masa kosong dalam kalendar.",
+      "L2": "Kualiti output lebih dipengaruhi oleh tahap tenaga berbanding panjang masa. Kerja deep thinking tak patut diletak pada slot otak separuh mati.",
+      "L3": "Failure pattern: isi waktu pagi dengan WhatsApp, email dan meeting remeh, kemudian paksa otak buat kerja kreatif pada malam ketika sudah habis bateri.",
+      "L4": "Energy-Match Scheduling: 1) track 3 hari bila waktu tenaga tinggi/sederhana/rendah, 2) tag task sebagai deep/medium/shallow, 3) pair deep dengan tenaga tinggi, medium dengan sederhana, shallow dengan rendah, 4) protect 1–2 blok deep work setiap hari.",
+      "L5": "Cost: mungkin perlu ubah rutin dan tolak beberapa meeting. Benefit: output naik tanpa perlu tambah jam kerja. Risk: orang lain tak faham kenapa kau ‘tak available’ masa tertentu; mitigasi: jelaskan sebagai blok fokus kerja penting."
+    }
+  },
+  {
+    "id": "LSD-Q0001",
+    "domain": "LSD",
+    "uh": {
+      "type": "Formalism",
+      "name": "Season Framing Map",
+      "artifact": "kenal pasti musim hidup sebelum buat keputusan besar"
+    },
+    "fingerprint": "Rasa nak buat keputusan besar tapi hidup masih kucar-kacir",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Pastikan dulu musim hidup: stabil, transisi, atau krisis; hanya buat keputusan besar bila sekurang-kurangnya separa stabil.",
+      "L2": "Keputusan besar (kahwin, pindah, tukar kerjaya, bisnes baru) sangat dipengaruhi keadaan semasa. Kalau dibuat masa krisis, kadang cuma lari dari sakit, bukan pilih jalan benar.",
+      "L3": "Failure pattern: guna keputusan besar sebagai ‘butang reset’ emosi – kahwin untuk lari sunyi, berhenti kerja untuk lari bos, hijrah untuk lari masalah dalam diri.",
+      "L4": "Season Framing Map: 1) nilai keadaan sekarang pada tiga skala: ekonomi, emosi, fizikal, 2) jika dua atau lebih berada di zon ‘merah’, klasifikasikan sebagai krisis; jika bercampur, transisi; jika hijau/kuning, stabil, 3) hanya benarkan diri buat keputusan besar pada musim stabil atau transisi yang terkawal.",
+      "L5": "Cost: mungkin perlu tangguh keputusan yang hati rasa tak sabar. Benefit: kurangkan keputusan yang lahir daripada panik dan regret jangka panjang. Risk: over-delay hingga jadi alasan untuk tak bergerak; mitigasi: set tarikh semak semula musim hidup."
+    }
+  },
+  {
+    "id": "LSD-Q0002",
+    "domain": "LSD",
+    "uh": {
+      "type": "Metric",
+      "name": "Regret Horizon Check",
+      "artifact": "uji keputusan dengan soalan penyesalan 2 tahun dan 10 tahun"
+    },
+    "fingerprint": "Keliru antara ambil peluang atau kekal di zon selesa",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Bandingkan penyesalan jika kekal vs berubah pada horizon 2 tahun dan 10 tahun, kemudian pilih jalan yang minimakan penyesalan jangka panjang.",
+      "L2": "Otak berat ke arah selamat hari ini, tapi menyesal esok. Tanya soalan penyesalan memaksa kita lihat diri masa depan, bukan hanya rasa sekarang.",
+      "L3": "Failure pattern: over-weight fear jangka pendek (malu, gagal, rugi sikit) dan under-weight penyesalan jangka panjang (tak cuba, tak berkembang, stuck di tempat toksik).",
+      "L4": "Regret Horizon Check: tulis dua kolum: A) kalau kekal seperti sekarang, B) kalau ambil peluang. Untuk setiap kolum, jawab: ‘Aku akan lebih menyesal di 2 tahun lagi atau 10 tahun lagi?’ Beri skor 0–2 untuk setiap horizon; pilih opsyen dengan skor penyesalan total lebih rendah.",
+      "L5": "Cost: mungkin pilih jalan yang susah sekarang. Benefit: hidup lebih align dengan nilai dan potensi jangka panjang. Risk: guna ‘regret’ sebagai justifikasi lompat tanpa kira tanggungjawab; mitigasi: pastikan constraint moral dan kewajipan tetap dihormati."
+    }
+  },
+  {
+    "id": "SME-Q0001",
+    "domain": "SME",
+    "uh": {
+      "type": "Formalism",
+      "name": "Intent–Impact Ledger (IIL)",
+      "artifact": "ledger 3×3 niat vs impak + trigger repair",
+      "note": "Ringkasan versi penuh dalam korpus asal."
+    },
+    "fingerprint": "Niat baik tak menebus mudarat berulang tanpa pembaikan",
+    "min_inputs": 3,
+    "answer": {
+      "L1": "Jangan jadikan niat baik sebagai lesen untuk ulang mudarat; berhenti dan repair bila impak terus menyakitkan orang.",
+      "L2": "Dalam etika, niat itu penting tapi orang hidup dengan impak, bukan skrip hati kita. Bila mudarat berulang, sistem perlukan tindakan pembaikan, bukan lagi alasan ‘saya ikhlas’.",
+      "L3": "Failure pattern: sembunyi di sebalik ayat ‘dia baik sebenarnya’ sehingga mangsa terus terluka dan tiada sesiapa berani tegur.",
+      "L4": "IIL: bina grid 3×3 (Intent: ikhlas/mixed/selfish × Impact: manfaat/neutral/mudarat). Jika kotak mudarat disentuh lebih dari dua kali, automatik trigger langkah: 1) stop, 2) akui salah, 3) compensate, 4) redesign tingkah, 5) retest pada skala kecil.",
+      "L5": "Cost: ego tercalar, mungkin hubungan renggang sekejap. Benefit: keadilan dan rahmah seimbang; orang nampak agama/etika sebagai sistem repair, bukan sistem tutup mulut. Risk: jadi terlalu mekanikal; mitigasi: sentiasa tambah ruang syura dan konteks, tanpa mematikan rule repair."
+    }
+  },
+  {
+    "id": "SME-Q0002",
+    "domain": "SME",
+    "uh": {
+      "type": "Procedure-Test",
+      "name": "Haram Flow Blocker",
+      "artifact": "stop duit haram masuk aliran hidup tanpa hancurkan semua sekaligus"
+    },
+    "fingerprint": "Sedang terlibat dengan sumber income syubhah/haram tapi ada tanggungan",
+    "min_inputs": 3,
+    "answer": {
+      "L1": "Rancang keluar secara berfasa sambil block expansion duit haram dan bina laluan income halal pengganti.",
+      "L2": "Realiti: ada orang terperangkap dalam kerja atau bisnes yang ada unsur haram tapi ada anak, sewa, hutang. Keluar serta-merta mungkin ideal di atas kertas, tapi boleh bawa mudarat lain kalau tiada plan pengganti.",
+      "L3": "Failure pattern: sama ada terus kekal tanpa rasa bersalah (‘semua orang buat’), atau keluar mengejut tanpa backup sampai keluarga terabai, kemudian salahkan agama.",
+      "L4": "Haram Flow Blocker: 1) stop dulu growth aktiviti haram (jangan expand, jangan tambah modal), 2) kira kos hidup minimum dan cari jalan minimum 30–50% cover dari sumber neutral/halal lain, 3) bila cover capai, kecilkan lagi bahagian haram, 4) set target tarikh keluar penuh dan cari bimbingan agama/fiqh untuk detail.",
+      "L5": "Cost: lifestyle mungkin turun, rasa sempit sekejap. Benefit: keluar dari kitaran rezeki kotor dengan lebih selamat. Risk: drag terlalu lama dan jadikan ‘fasa’ sebagai alasan; mitigasi: letak tarikh jelas dan semak progres secara berkala dengan orang yang dipercayai."
+    }
+  },
+  {
+    "id": "RLOG-Q0001",
+    "domain": "RLOG",
+    "uh": {
+      "type": "Formalism",
+      "name": "Risk Tier Ladder",
+      "artifact": "klasifikasi keputusan ikut tahap risiko dan reversible/tak"
+    },
+    "fingerprint": "Tak beza antara keputusan mudah undur dan keputusan sekali jalan",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Label keputusan ikut risk tier dan sama ada ia reversible atau tidak sebelum pilih kelajuan dan standard bukti.",
+      "L2": "Bukan semua keputusan perlu bukti tahap sama. Keputusan yang boleh diundur perlukan standard lebih ringan berbanding keputusan sekali jalan seperti jual rumah atau ambil hutang besar.",
+      "L3": "Failure pattern: guna standard bukti lemah untuk keputusan sekali jalan (contoh: ambil loan besar hanya sebab tengok 1–2 contoh orang berjaya) atau overthink keputusan kecil yang boleh diundur.",
+      "L4": "Risk Tier Ladder: 1) tentukan jika keputusan reversible (boleh U-turn murah) atau irreversible, 2) beri tier: rendah/sederhana/tinggi ikut impak kewangan, emosi, undang-undang, 3) untuk setiap tier, tetapkan minimum bukti dan masa fikir sebelum go.",
+      "L5": "Cost: lambat sedikit untuk keputusan besar. Benefit: kurangkan penyesalan bodoh yang mahal. Risk: paralysis jika semua dianggap high tier; mitigasi: jujur dalam scoring impak dan minta pandangan pihak ketiga."
+    }
+  },
+  {
+    "id": "RLOG-Q0002",
+    "domain": "RLOG",
+    "uh": {
+      "type": "Failure-Mode",
+      "name": "Nice Answer Trap",
+      "artifact": "jawapan berbunyi baik tapi tiada guardrail dan tiada stop-loss"
+    },
+    "fingerprint": "Jawapan nampak matang dan lembut tapi tak selamat bila dipakai",
+    "min_inputs": 2,
+    "answer": {
+      "L1": "Jangan puas hati dengan jawapan sedap; semak sama ada ada guardrail, angka, atau stop-loss yang jelas.",
+      "L2": "Dalam governance, bahaya besar ialah jawapan yang kedengaran bijak dan empati, tetapi bila diikuti secara literal, boleh bawa organisasi ke tepi gaung kerana tiada had dan tiada pelan bila keadaan jadi buruk.",
+      "L3": "Failure pattern: terpedaya dengan gaya bahasa (‘we care deeply’, ‘take balanced risk’) tanpa apa-apa rule konkrit; semua orang rasa lega sekejap, tapi sistem kekal terdedah.",
+      "L4": "Nice Answer Trap Check: setiap cadangan polisi mesti jawab tiga soalan: 1) apa yang dilarang dengan jelas? 2) apa limit angka/masa yang trigger review? 3) apa tindakan jika benda buruk berlaku juga? Jika jawapan kosong, itu hanya ayat cantik, bukan governance.",
+      "L5": "Cost: nampak cerewet kerana asyik minta detail yang ‘tak sedap marketing’. Benefit: organisasi kurang terperangkap dalam skandal yang sebenarnya sudah boleh dijangka. Risk: terlalu rigid; mitigasi: bezakan guideline fleksibel vs hard guardrail."
+    }
+  }
+]

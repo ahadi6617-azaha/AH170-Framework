@@ -1,0 +1,67 @@
+Berdasarkan “ValueNotes” dalam fail AH170_28JSON_ValueNotes.txt, 28 JSON seed kau tu memang dibahagi kepada 7 domain:
+
+1) BIZ
+   - Fokus: keputusan bisnes/operasi (pricing, supplier, sales, marketing, hiring, cashflow krisis).
+   - Output tipikal: keputusan + langkah 7–30 hari + guardrail margin/reputasi.
+
+2) FIN
+   - Fokus: kewangan peribadi/cashflow (hutang, simpanan, flow akaun, spending control, runway).
+   - Output tipikal: ruleset ringkas + stop-loss + struktur aliran duit.
+
+3) LSD
+   - Fokus: Life Strategy & Decision (pilihan hidup/kerjaya, trade-off risiko, exit condition, loop keputusan).
+   - Output tipikal: kerangka pilih 1 option + syarat keluar + cara uji realiti.
+
+4) LSM
+   - Fokus: Learning Strategy & Mental Models (cara belajar yang melekat, transfer teori→tindakan, elak note-hoarding).
+   - Output tipikal: perubahan kaedah (bukan tambah jam) + latihan ringkas + measurement.
+
+5) PWO
+   - Fokus: Productivity & Work Optimization (mula kerja, fokus, kurangkan WIP, tool switching, audit masa).
+   - Output tipikal: prosedur 2–10 minit, polisi 30 hari, friction/trigger mekanikal.
+
+6) RLOG
+   - Fokus: Reasoning & Logic (anti-halu, disiplin andaian, check overconfidence, cara compress keputusan bila uncertain).
+   - Output tipikal: min_inputs, decision rule, cara verify cepat, dan “kenapa bukan option lain”.
+
+7) SME
+   - Fokus: komponen spiritual/meaning/emotion regulation (contoh dalam dataset kau: isu doa, harapan vs realiti, ujian, niat, emosi/empati).
+   - Output tipikal: reframe yang stabil + boundary moral/etika + cara kekal waras tanpa delusion.
+
+Ringkasnya: 7 domain ni cover 3 lapis besar — (A) bisnes & duit (BIZ/FIN), (B) diri & prestasi (LSD/LSM/PWO), (C) logik & kestabilan nilai/jiwa (RLOG/SME).
+
+__________
+
+Pembahagian 28 JSON (total 1,400 item):
+
+BIZ  — Business / Operasi bisnes (krisis, pricing, supplier, team)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+FIN  — Finance / Money Logic (cashflow, hutang, simpanan)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+LSD  — Life Strategy & Decisions (kerjaya, boundary, trade-off hidup)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+LSM  — Learning Strategy & Mental Models (cara belajar, ingatan, transfer skill)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+PWO  — Productivity & Work Optimization (fokus, sistem kerja, procrastination)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+RLOG — Reasoning & Logic (uji andaian, elak bias, struktur hujah)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+SME  — Spiritual/Moral/Ethics (nilai, integriti, ujian, doa)
+  • Bil fail (pack): 4
+  • Item per domain: 200
+
+TOTAL:
+  • 7 domain × 200 item = 1,400 item
+  • 7 domain × 4 fail = 28 fail
